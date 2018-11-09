@@ -1,6 +1,19 @@
-#main {
-    /* add CSS here */
+*{
+    margin: 0;
+    padding: 0;
 }
-.pet {
-    /* add CSS here */
+
+
+
+
+.box {
+    max-width: 255px;
+    height:200px;
+    margin: auto;
+}
+img
+{
+    border: #00ff08;
+    border: #00ff08;
+    box-shadow: 9px 11px 16px 0px #521717;
 }
