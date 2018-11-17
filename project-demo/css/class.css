@@ -1,0 +1,22 @@
+
+@media only screen and (max-width: 991px)
+{
+    .col-md-9 + .col-md-3
+    {
+        padding-top: 15px;
+
+    }
+    label
+    {
+        padding-top: 8px;
+    }
+}
+
+@media only screen and (max-width: 576px)
+{
+    label
+    {
+        display: none;
+    }
+
+}
