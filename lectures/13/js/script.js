@@ -31,7 +31,17 @@ function displayNext() {
 }
 
 function displayCurrentQuestion() {
-    /*Write your code here */
+
+   for(var i=0;i<1;i++)
+   {
+
+       document.getElementById("question").innerText = questions[i].question;
+       for(var j=0;j<questions[currentQuestion].choices.length;j++)
+       {
+           document.getElementById("choice-list").innerHTML +='<li> <input  type="radio" id="1" name="wrt">'+ questions[currentQuestion].choices[j]+'</li>'+"<br>";
+       }
+        document.querySelector("input[name='wrt']:checked")
+   }
 }
 
 function resetQuiz() {
