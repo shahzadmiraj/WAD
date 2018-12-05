@@ -40,7 +40,7 @@ function displayCurrentQuestion() {
        {
            document.getElementById("choice-list").innerHTML +='<li> <input  type="radio" id="1" name="wrt">'+ questions[currentQuestion].choices[j]+'</li>'+"<br>";
        }
-        document.querySelector("input[name='wrt']:checked")
+        document.querySelector("input[name='wrt']:checked");
    }
 }
 
