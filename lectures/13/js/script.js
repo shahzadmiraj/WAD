@@ -19,6 +19,10 @@ var questions = [{
         "for",
         "none of the above"],
     correctAnswer : 1
+},{
+    question:"in computer binary number system 0 means:",
+    choices:["off","on","hello","bye"],
+    correctAnswer:1
 }];
 
 var currentQuestion = 0;
@@ -26,23 +30,44 @@ var correctAnswers = 0;
 var quizOver = false;
 displayCurrentQuestion();
 document.getElementById("quiz-message").style.display = 'none';
+
 function displayNext() {
-    /*Write your code here */
+    var a=document.querySelector('input[name="wrt"]:checked');
+    if(a!=null)
+    {
+        if(questions[currentQuestion].correctAnswer==a.value)
+        {
+            correctAnswers++;
+        }
+        if(currentQuestion==questions.length-1)
+        {
+            displayScore();
+        }
+        else {
+            var b = document.getElementById("choice-list");
+
+            b.innerText = "";
+            currentQuestion++;
+            displayCurrentQuestion();
+        }
+
+    }
+
+
+
 }
+
 
 function displayCurrentQuestion() {
 
-   for(var i=0;i<1;i++)
-   {
 
-       document.getElementById("question").innerText = questions[i].question;
-       for(var j=0;j<questions[currentQuestion].choices.length;j++)
-       {
-           document.getElementById("choice-list").innerHTML +='<li> <input  type="radio" id="1" name="wrt">'+ questions[currentQuestion].choices[j]+'</li>'+"<br>";
+       document.getElementById("question").innerText = questions[currentQuestion].question;
+       for(var j=0;j<questions[currentQuestion].choices.length;j++) {
+           document.getElementById("choice-list").innerHTML += '<li> <input  type="radio" id="1" name="wrt" value=' + j + '>' + questions[currentQuestion].choices[j] + '</li><br>';
        }
-        document.querySelector("input[name='wrt']:checked");
-   }
+
 }
+
 
 function resetQuiz() {
     currentQuestion = 0;
