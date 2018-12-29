@@ -18,21 +18,41 @@ function shows() {
 
 
 function Deposit(event) {
-
+    var v=document.getElementById("deposit-msg");
+    v.innerText="";
 if(event.keyCode==13)
 {
     var user_data=document.getElementById("deposit").value;
     if(!isNaN(user_data))
     {
-        account.balance=account.balance+parseInt(user_data);
+        var num=parseInt(user_data);
+        account.balance=account.balance+num;
         shows();
+        var d=new Date();
+        showdetail("deposit",num,d);
+    }
+    else
+    {
+
+        v.innerText="please enter only numbers";
     }
 }
 }
+
+function showdetail(s,num,x) {
+    var history=document.getElementById("transaction-table");
+    history.innerHTML+='<tr><th align="left" valign="middle" scope="col">'+x+'</th> <th align="left" valign="middle" scope="col">'+
+        s+'</th><th align="left" valign="middle" scope="col">'+num+'</th>';
+
+}
+
 function Withdraw(event) {
     var k=event.keyCode;
+    var v=document.getElementById("withdraw-msg");
+    v.innerText="";
     if(k==13)
     {
+
         var user_data=document.getElementById("withdraw").value;
         if(!isNaN(user_data))
         {
@@ -42,10 +62,20 @@ function Withdraw(event) {
                 var x=new Date();
                 account.balance=account.balance-num;
                 shows();
-                var history=document.getElementById("transaction-table");
-                history.innerHTML+='<tr><th align="left" valign="middle" scope="col">'+x+'<th
+                showdetail('withdraw',num,x);
+            }
+            else
+            {
+                v.style.color="red";
+                v.innerText="insufficent amount";
             }
         }
+        else
+        {
+            v.style.color="blue";
+            v.innerText="please enter only numbers";
+        }
     }
+
 
 }

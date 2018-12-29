@@ -60,14 +60,13 @@ function displayNext() {
 
 function displayCurrentQuestion() {
 
-
+var d=document.getElementById("choice-list");
        document.getElementById("question").innerText = questions[currentQuestion].question;
        for(var j=0;j<questions[currentQuestion].choices.length;j++) {
-           document.getElementById("choice-list").innerHTML += '<li> <input  type="radio" id="1" name="wrt" value=' + j + '>' + questions[currentQuestion].choices[j] + '</li><br>';
+           d.innerHTML += '<li> <input  type="radio" id="1" name="wrt" value=' + j + '>' + questions[currentQuestion].choices[j] + '</li><br>';
        }
-
+    d.innerHTML+='<div><input type="text" placeholder='+correctAnswers+'></div>';
 }
-
 
 function resetQuiz() {
     currentQuestion = 0;
