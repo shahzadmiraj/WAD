@@ -18,10 +18,10 @@ $s=array(1,2,3,4,5,6,7,8,9,0,"num1"=>10,"num2"=>11); // array for all float int 
 //{
 //    echo $index.'<br>';
 //}
-//foreach ($s as $key=>$index) //key as index take ['0'] 0 is index
-//{
-//    echo $key." ".$index.'<br>';
-//}
+foreach ($s as $key=>$index) //key as index take ['0'] 0 is index
+{
+   echo $key." ".$index.'<br>';
+}
 $d='name';
 function f1($user)
 {
