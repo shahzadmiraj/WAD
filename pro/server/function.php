@@ -38,8 +38,6 @@ function getBrands()
             $brandTitle=$result['brandTitle'];
             echo '<li><a class="nav-link" href="#">'.$brandTitle.'</a></li>';
         }
-
-
     }
 
 }
