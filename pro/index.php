@@ -1,6 +1,6 @@
 <?php
 include "server/function.php";
-
+include "server/functions.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -102,10 +102,9 @@ include "server/function.php";
 
         <div class="row">
             <div class="col">
-                <?php
-                getAllproducts();
-                ?>
+
             </div>
+                <?php getPro(); ?>
         </div>
     </article>
 
