@@ -49,6 +49,14 @@ function getAllproducts()
     {
         $queryProducts="SELECT * FROM `products`";
         $connectingQueryByDb=mysqli_query($con,$queryProducts);
+        if($connectingQueryByDb==true)
+        {
+            while($result=mysqli_fetch_assoc($connectingQueryByDb))
+            {
+                $pro_id=$result['pro_id'];
+                echo $pro_id;
+            }
+        }
     }
 }
 

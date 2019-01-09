@@ -102,7 +102,9 @@ include "server/function.php";
 
         <div class="row">
             <div class="col">
-                Content
+                <?php
+                getAllproducts();
+                ?>
             </div>
         </div>
     </article>
