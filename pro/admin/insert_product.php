@@ -3,7 +3,7 @@ require_once "db_connection.php";
 
 ?>
 <?php
-if(isset($_POST['pro_title'])) {
+if(isset($_POST['submitBtn'])) {
     $title=$_POST['pro_title'];
     $cat=$_POST['pro_cat'];
     $brand=$_POST['pro_brand'];

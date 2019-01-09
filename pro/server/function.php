@@ -39,6 +39,17 @@ function getBrands()
             echo '<li><a class="nav-link" href="#">'.$brandTitle.'</a></li>';
         }
     }
-
 }
+
+
+function getAllproducts()
+{
+    global  $con;
+    if(isset($con))
+    {
+        $queryProducts="SELECT * FROM `products`";
+        $connectingQueryByDb=mysqli_query($con,$queryProducts);
+    }
+}
+
 ?>
