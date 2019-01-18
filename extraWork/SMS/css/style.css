@@ -1,0 +1,14 @@
+.admintitle
+{
+    background-color: #add4b7;
+    color: ivory;
+    width: 100%;
+    height: 30vh;
+}
+.adminDashbord
+{
+    background-color: #cac1d4;
+    width: 100%;
+    height: 70vh;
+    font-size: larger;
+}
