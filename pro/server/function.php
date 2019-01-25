@@ -6,7 +6,7 @@
  * Time: 5:07 PM
  */
 require "connection.php";
-function getcats()
+function getcat()
 {
     global  $con;
     if(!isset($con))
@@ -22,7 +22,7 @@ function getcats()
        }
     }
 }
-function getBrands()
+function getBrand()
 {
     global  $con;
     if(!isset($con))
@@ -42,7 +42,7 @@ function getBrands()
 }
 
 
-function getAllproducts()
+function getAllproduct()
 {
     global  $con;
     if(isset($con))
