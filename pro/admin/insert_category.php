@@ -12,16 +12,17 @@ if(!isset($_SESSION['user_email']))
     header("location:login.php");
 }
 require_once "db_connection.php";
-if(isset($_GET['submitBtn']))
-{
- $text=$_GET['textfield'];
- global  $con;
- $query="INSERT INTO `categories`(`cat_id`, `cat_title`) VALUES ('NULL','$text')";
-    $connectedq=mysqli_query($con,$query);
-    if(!isset($connectedq))
-    {
-        echo "not connected";
+if(isset($_GET['submitBtn'])) {
+    $text = $_GET['textfield'];
+    global $con;
+    $query = "INSERT INTO `categories`(`cat_id`, `cat_title`) VALUES ('NULL','$text')";
+    $connectedq = mysqli_query($con, $query);
+    if (!isset($connectedq)) {
+        header('location:index.php?logged_in=You have failure to add Category');
         exit();
+    } else {
+        //include "insert_category.php";
+        header('location:index.php?insert_category=insert_category');
     }
 }
 ?>

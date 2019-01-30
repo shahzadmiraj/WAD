@@ -6,21 +6,24 @@
  * Time: 5:29 PM
  */
 //require_once "connection.php";
-//require_once "db_connection.php";
-/*if(!isset($_SESSION['user_email']))
+require_once "db_connection.php";
+if(!isset($_SESSION['user_email']))
 {
     header("location:login.php");
-}*/
+}
 if(isset($_GET['submitBtn1']))
 {
-    $text=$_GET['textfield'];
+    $text=$_GET['textfield1'];
     global  $con;
-    $query="INSERT INTO `brands`(`brand_id`, `brand_title`) VALUES ('NULL','$text')";
-    $connectedq=mysqli_query($con,$query);
-    if(!$connectedq)
-    {
-        echo "not connected";
-    }
+    $query1="INSERT INTO `brands`(`brand_title`) VALUES ('$text')";
+    $connectedq1=mysqli_query($con,$query1);
+        if (!isset($connectedq1)) {
+            header('location:index.php?logged_in=You have failure to add brand');
+            exit();
+        } else {
+
+            header("location:index.php?insert_brand=insert_brand.php");
+        }
 }
 ?>
 <!DOCTYPE html>
@@ -34,7 +37,7 @@ if(isset($_GET['submitBtn1']))
 <h1 align="center">Insert Brand</h1>
 <div class="container "align="center">
     <form action="insert_brand.php" method="get">
-        <input type="text" name="textfield"><br>
+        <input type="text" name="textfield1"><br>
         <input type="submit" name="submitBtn1">
     </form>
 </div>
